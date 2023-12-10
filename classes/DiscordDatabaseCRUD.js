@@ -5,7 +5,11 @@ class DiscordDatabaseCRUD {
 
 	async getUsers() {
 		try {
-			await this.connection.query('SELECT * FROM `users`;');
+			const [rows, fields] = await this.connection.execute(
+				'SELECT * FROM `users`;'
+			);
+
+			return rows;
 		} catch (err) {
 			console.log('Database Error for getUsers: ', err);
 			throw err;
@@ -14,8 +18,11 @@ class DiscordDatabaseCRUD {
 
 	async getGames() {
 		try {
-			results = await this.connection.query('SELECT * FROM `games`;');
-			console.log(results);
+			const [rows, fields] = await this.connection.execute(
+				'SELECT * FROM `games`;'
+			);
+
+			return rows;
 		} catch (err) {
 			console.log('Database Error for getGames: ', err);
 			throw err;

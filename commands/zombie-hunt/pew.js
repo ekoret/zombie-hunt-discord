@@ -9,7 +9,7 @@ module.exports = {
 	async execute(interaction) {
 		// we have access tot he db using interaction.client.db
 		// console.log(await interaction.client.discordDatabaseCRUD.getUsers());
-		console.log(await interaction.client.discordDatabaseCRUD.getGames());
+		// console.log(await interaction.client.discordDatabaseCRUD.getGames());
 
 		// check if the user has a record in the database
 
