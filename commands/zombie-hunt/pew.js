@@ -7,6 +7,10 @@ module.exports = {
 		.setName('pew')
 		.setDescription('Shoot and maybe kill a zombie.'),
 	async execute(interaction) {
+		// we have access tot he db using interaction.client.db
+		// console.log(await interaction.client.discordDatabaseCRUD.getUsers());
+		console.log(await interaction.client.discordDatabaseCRUD.getGames());
+
 		// check if the user has a record in the database
 
 		// if there is no record
