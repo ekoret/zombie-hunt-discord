@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS users (
     user_id BIGINT NOT NULL,
     username VARCHAR(255) NOT NULL,
     nickname VARCHAR(255) DEFAULT NULL,
-    email VARCHAR(255) DEFAULT NULL
+    email VARCHAR(255) DEFAULT NULL,
+    INDEX (user_id)
 );
 
 CREATE TABLE IF NOT EXISTS games (
