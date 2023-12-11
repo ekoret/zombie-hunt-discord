@@ -1,10 +1,22 @@
 const { Events } = require('discord.js');
 
+const EndpointAPI = require('../classes/EndpointAPI');
+
 module.exports = {
 	name: Events.InteractionCreate,
 	once: false,
 	async execute(interaction) {
 		if (!interaction.isChatInputCommand()) return;
+
+		// Let's check here if the user making the command is registered in the database
+		if (
+			!EndpointAPI.is_user_registered(
+				interaction.user.id,
+				interaction.client.discordDatabaseCRUD
+			)
+		) {
+			// If they're not registered in the database, then they havent connected their wordpress account to the bot
+		}
 
 		const command = interaction.client.commands.get(interaction.commandName);
 
