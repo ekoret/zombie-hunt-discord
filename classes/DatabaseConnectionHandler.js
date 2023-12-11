@@ -22,6 +22,8 @@ class DatabaseConnectionHandler {
 
 			// Start persistent connection
 			await this.connection.connect();
+
+			console.log('Connected to database ' + this.database);
 		} catch (err) {
 			console.log('Database connection failed: ', err);
 			throw err;
